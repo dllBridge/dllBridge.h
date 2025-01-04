@@ -30,10 +30,10 @@ struct WL_msg                                                                   
 {
 
        int        nCondition,   //  1 - Всё хорошо (подключен) 
-		              nPrint;   //  Вариант печати. Для консоли, Windows-окна или другое...
-	   char   szComment1[81],
-		      szComment2[81],
-			  szComment3[81];          // "Connected as 1001"
+		      nPrint;   //  Вариант печати. Для консоли, Windows-окна или другое...
+       char   szComment1[81],
+	      szComment2[81],
+	      szComment3[81];          // "Connected as 1001"
 
 } msg; 
 
@@ -41,9 +41,9 @@ struct WL_msg                                                                   
 HINSTANCE                hDll;                                         // if(hDll != 0) библиотека подключена.
 
 char 	       szPathDLL[111], 
-			  szPathBase[100] = "C:\\dllBridge",                                       //  Default folder	                  
-			   szWLError[201];
-			//szStatusNum[99];          // "Connected as 1001"
+	      szPathBase[100] = "C:\\dllBridge",                                       //  Default folder	                  
+	       szWLError[201];
+	    //szStatusNum[99];          // "Connected as 1001"
 
 int             ProgramNumber = 1001,   // Вы можете здесь поменять этот номер до подключения к dllBridge.dll                    
                 OldPrg_Number,          // или вызвать dllBridge_init(7564); 7564 - это новый номер. 
@@ -87,10 +87,9 @@ namespace
 		   if(res) 
 		   { 
 		       __DisConnect(ProgramNumber); 
-			     hDll = 0; 
+			 hDll = 0; 
 		         strcpy(msg.szComment1, "Disconnected from the library \"dllBridge.dll\"."); 
-				 strcpy(msg.szComment2, "..."); 
-				// Printing_messages(); 
+			 strcpy(msg.szComment2, "..."); 
 		   }
 	   }	   
 	
